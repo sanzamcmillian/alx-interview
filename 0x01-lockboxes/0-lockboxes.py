@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""unlock boxes"""
+"""unlock boxes using n keys from the boxes"""
 
 
 def canUnlockAll(boxes):
