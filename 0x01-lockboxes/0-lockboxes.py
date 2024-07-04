@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""unlock boxes using n keys from the boxes"""
+"""Unlock boxes using n keys from the boxes"""
 
 
 def canUnlockAll(boxes):
-    """Method that determines if all boxes can be opened
+    """function that determines if all boxes can be opened
         Args:
-            boxes(list): list of list to be checked.
+            boxes(list): list of list, the boxes.
     """
     if not boxes:
         return False
