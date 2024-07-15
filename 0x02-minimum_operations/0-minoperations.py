@@ -1,16 +1,16 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """copy and paste operations."""
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     """a function to return the minimum number of copy past operations.
        Args:
            n(int): number of operations to be computed
     """
     if n <= 1:
         return 0
-    operations: int = 0
-    factor: int = 2
+    operations = 0
+    factor = 2
     while n > 1:
         while n % factor == 0:
             operations += factor
