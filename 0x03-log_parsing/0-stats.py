@@ -52,3 +52,5 @@ for line in sys.stdin:
         
     if line_count % 10 == 0:
         print_metrics()
+
+print_metrics()
