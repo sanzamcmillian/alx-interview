@@ -25,7 +25,6 @@ def print_metrics():
             print(f"{code}: {status_code_count[code]}")
 
 
-
 def signal_handler(sig, frame):
     """signal handler for keyboard interruptions"""
     print_metrics()
@@ -38,18 +37,18 @@ line_count = 0
 for line in sys.stdin:
     line_count += 1
     parts = line.split()
-    
+
     if len(parts) >= 0:
         try:
             file_size = int(parts[-1])
             status_code = parts[-2]
-            
-            total_file_size  += file_size
+
+            total_file_size += file_size
             if status_code in status_code_count:
                 status_code_count[status_code] += 1
         except ValueError:
             pass
-        
+
     if line_count % 10 == 0:
         print_metrics()
 
