@@ -3,5 +3,8 @@
 
 
 def validUTF8(data):
-    """function that determines if a given data set represents a valid UTF-8 encoding"""
-    
+    """method that determines if data set represents a valid UTF-8 encoding"""
+    for i in data:
+        if i > 0 and i <= 128:
+            return True
+        return False
