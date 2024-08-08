@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "nodejs": "^0.0.0",
     "semistandard": "^17.0.0"
   }
 }
