@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-request('https://swapi-api.alx-tools.com' + process.argv[2], function (error, response, body) {
+request('https://swapi-api.hbtn.io/api/films/' + process.argv[2], function (error, response, body) {
   if (error) throw error;
   const actors = JSON.parse(body).characters;
   exactOrder(actors, 0);
