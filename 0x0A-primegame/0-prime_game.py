@@ -18,7 +18,7 @@ def isWinner(x, nums):
     ben_score = 0
 
     for n in nums:
-        p_list = prime_list[n]
+        p_list = prime_list(n)
         primes = [i for i in range(2, n + 1) if p_list[i]]
         
         count = len(primes)
