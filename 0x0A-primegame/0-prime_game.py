@@ -21,9 +21,18 @@ def isWinner(x, nums):
         p_list = prime_list(n)
         primes = [i for i in range(2, n + 1) if p_list[i]]
 
-        count = len(primes)
+        turns = 0
+        while primes:
+            prime = primes[0]
+            multiples = []
+            for i in range(prime, n + 1, prime):
+                if p_list[i]:
+                    p_list[i] = False
+                    multiples.append(i)
+            primes = [p for p in primes if not sieve[p]]
+            turns += 1
 
-        if count % 2 == 1:
+        if turns % 2 == 1:
             maria_score += 1
         else:
             ben_score += 1
