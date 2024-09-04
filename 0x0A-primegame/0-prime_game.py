@@ -20,9 +20,9 @@ def isWinner(x, nums):
     for n in nums:
         p_list = prime_list(n)
         primes = [i for i in range(2, n + 1) if p_list[i]]
-        
+
         count = len(primes)
-        
+
         if count % 2 == 1:
             maria_score += 1
         else:
