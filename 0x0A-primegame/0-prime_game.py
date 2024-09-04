@@ -2,44 +2,37 @@
 """module for a prime game"""
 
 
+def prime_list(n):
+    """method generate a prime number list"""
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
 def isWinner(x, nums):
-    "method for the prime game"
-    def prime_list(n):
-        """method to generate a prime number list"""
-        p_list = [True] * (n + 1)
-        p_list[0] = p_list[1] = False
-        for start in range(2, int(n**0.5) + 1):
-            if p_list[start]:
-                for i in range(start * start, n + 1, start):
-                    p_list[i] = False
-        return p_list
-
-    maria_score = 0
+    """method to generate a winner for the prime game"""
+    p_list = []
     ben_score = 0
-
-    for n in nums:
-        p_list = prime_list(n)
-        primes = [i for i in range(2, n + 1) if p_list[i]]
-
-        turns = 0
-        while primes:
-            prime = primes[0]
-            multiples = []
-            for i in range(prime, n + 1, prime):
-                if p_list[i]:
-                    p_list[i] = False
-                    multiples.append(i)
-            primes = [p for p in primes if not sieve[p]]
-            turns += 1
-
-        if turns % 2 == 1:
-            maria_score += 1
-        else:
+    maria_score = 0
+    for i in range(x):
+        n = list(range(1, nums[i] + 1))
+        for j in range(len(n)):
+            if (prime_list(n[j]) is not True):
+                continue
+            else:
+                p_list.append(n[j])
+        if len(p_list) % 2 == 0:
             ben_score += 1
-
-    if maria_score > ben_score:
-        return 'Maria'
-    elif ben_score > maria_score:
+            p_list.clear()
+        else:
+            maria_score += 1
+            p_list.clear()
+    if ben_score > maria_score:
         return 'Ben'
+    elif maria_score > ben_score:
+        return 'Maria'
     else:
         return None
